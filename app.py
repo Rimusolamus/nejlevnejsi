@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/getTags')
 def getTags():
-    return {"tags":["smazak","buger","kridla","polevka","vegan"]}
+    return {"tags":["smazak","burger","kridla","polevka","vegan"]}
 
 @app.route('/getTopOffers')
 def getTopOffers():
