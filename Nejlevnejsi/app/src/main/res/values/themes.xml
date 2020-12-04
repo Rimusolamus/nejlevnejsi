@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<!-- Base application theme. -->
+	<style name="Theme.Nejlevnejsi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+		<!-- Primary brand color. -->
+		<item name="colorPrimary">@color/main</item>
+		<item name="colorPrimaryVariant">@color/one</item>
+		<item name="colorOnPrimary">@color/white</item>
+		<!-- Secondary brand color. -->
+		<item name="colorSecondary">@color/two</item>
+		<item name="colorSecondaryVariant">@color/main</item>
+		<item name="colorOnSecondary">@color/white</item>
+		<!-- Status bar color. -->
+		<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+	</style>
+
+	<style name="Theme.Nejlevnejsi.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+	<style name="Theme.Nejlevnejsi.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
