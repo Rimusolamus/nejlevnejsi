@@ -1,3 +1,3 @@
 # nejlevnejsi
 # it's gonna be legendary
-# suck my pica
+create "nejlevnejsi" db in mongo
