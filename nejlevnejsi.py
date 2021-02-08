@@ -12,7 +12,7 @@ class JSONEncoder(json.JSONEncoder):
 
 
 app = Flask(__name__)
-client = MongoClient('mongodb://localhost:27017/nejlevnejsi')
+client = MongoClient('mongodb://0.0.0.0:27017/nejlevnejsi')
 db = client.nejlevnejsi
 
 
@@ -21,9 +21,15 @@ def getTags():
     return JSONEncoder().encode(db.tags.find_one_or_404())
 
 
+@app.route('/test')
+def test():
+    return "qwerty"
+
+
+@app.route('/index')
 @app.route('/')
 def index():
-    return "it works"
+    return "where are routes?"
 
 
 @app.route('/getTopOffers')
