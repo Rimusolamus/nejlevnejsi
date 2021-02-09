@@ -55,7 +55,7 @@ class HomeFragment : Fragment() {
 		}
 
 		// user favorites
-		val favouriteOfferAdapter = OffersAdapter(::addToFavorites)
+		val favouriteOfferAdapter = OffersAdapter(isFav = true, ::addToFavorites, ::removeFromFavourites)
 		viewBinding.favouriteOffers.layoutManager = LinearLayoutManager(context)
 		viewBinding.favouriteOffers.adapter = favouriteOfferAdapter
 		mainViewModel.favouriteOffers.observe(owner = viewLifecycleOwner) {
@@ -64,7 +64,7 @@ class HomeFragment : Fragment() {
 		}
 
 		// top offers
-		val offersAdapter = OffersAdapter(::addToFavorites)
+		val offersAdapter = OffersAdapter(isFav = false, ::addToFavorites, ::removeFromFavourites)
 		viewBinding.offers.layoutManager = LinearLayoutManager(context)
 		viewBinding.offers.adapter = offersAdapter
 		mainViewModel.topOffers.observe(owner = viewLifecycleOwner) {
@@ -86,6 +86,10 @@ class HomeFragment : Fragment() {
 
 	private fun addToFavorites(offersData: OffersData) {
 		mainViewModel.addToFavorites(offersData)
+	}
+
+	private fun removeFromFavourites(offersData: OffersData) {
+		mainViewModel.removeFromFavourites(offersData)
 	}
 
 }

@@ -35,4 +35,10 @@ class MainViewModel(
             homeRepository.addToFavorites(offersData)
         }
     }
+
+    fun removeFromFavourites(offersData: OffersData) {
+        viewModelScope.launch {
+            homeRepository.removeFromFavorites(offersData)
+        }
+    }
 }

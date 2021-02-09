@@ -27,4 +27,6 @@ class HomeRepository(private val api: Api, private val favouriteOffersDao: Favou
     suspend fun addToFavorites(offersData: OffersData) = favouriteOffersDao.insertFavouriteOffers(
         FavouriteOffer(name = offersData.name, description = offersData.description)
     )
+
+    suspend fun removeFromFavorites(offersData: OffersData) = favouriteOffersDao.deleteFavouriteOffer(offersData.name)
 }

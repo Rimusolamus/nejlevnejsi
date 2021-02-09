@@ -16,7 +16,7 @@ interface FavouriteOffersDao {
     @Update
     suspend fun updateFavouriteOffer(favouriteOffer: FavouriteOffer)
 
-    @Delete
-    suspend fun deleteFavouriteOffer(favouriteOffer: FavouriteOffer)
+    @Query("DELETE FROM FavouriteOffer WHERE name = :name")
+    suspend fun deleteFavouriteOffer(name: String)
 
 }
