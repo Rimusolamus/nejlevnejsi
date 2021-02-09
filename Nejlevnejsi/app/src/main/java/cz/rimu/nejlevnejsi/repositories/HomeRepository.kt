@@ -1,5 +1,6 @@
 package cz.rimu.nejlevnejsi.repositories
 
+import androidx.lifecycle.LiveData
 import cz.rimu.nejlevnejsi.db.dao.FavouriteOffersDao
 import cz.rimu.nejlevnejsi.db.models.FavouriteOffer
 import cz.rimu.nejlevnejsi.rest.Api
@@ -21,7 +22,7 @@ class HomeRepository(private val api: Api, private val favouriteOffersDao: Favou
         Offers(listOf())
     }
 
-    suspend fun getFavouriteOffers(): List<FavouriteOffer> = favouriteOffersDao.getFavouriteOffers()
+    fun getFavouriteOffers(): LiveData<List<FavouriteOffer>> = favouriteOffersDao.getFavouriteOffers()
 
     suspend fun addToFavorites(offersData: OffersData) = favouriteOffersDao.insertFavouriteOffers(
         FavouriteOffer(name = offersData.name, description = offersData.description)

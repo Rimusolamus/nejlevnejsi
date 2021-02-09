@@ -1,5 +1,6 @@
 package cz.rimu.nejlevnejsi.db.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import cz.rimu.nejlevnejsi.db.models.FavouriteOffer
 
@@ -7,7 +8,7 @@ import cz.rimu.nejlevnejsi.db.models.FavouriteOffer
 interface FavouriteOffersDao {
 
     @Query("Select * from FavouriteOffer")
-    suspend fun getFavouriteOffers(): List<FavouriteOffer>
+    fun getFavouriteOffers(): LiveData<List<FavouriteOffer>>
 
     @Insert
     suspend fun insertFavouriteOffers(favouriteOffer: FavouriteOffer)

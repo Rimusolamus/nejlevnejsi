@@ -22,12 +22,12 @@ class MainViewModel(
         emit(homeRepository.getTopOffers())
     }
 
-    val favouriteOffers: LiveData<List<OffersData>> = liveData {
+    val favouriteOffers: LiveData<List<OffersData>> = Transformations.map(homeRepository.getFavouriteOffers()){
         val offers = mutableListOf<OffersData>()
-        for (offer in homeRepository.getFavouriteOffers()) {
+        for (offer in it) {
             offers.add(OffersData(name = offer.name, description = offer.description))
         }
-        emit(offers)
+        return@map offers
     }
 
     fun addToFavorites(offersData: OffersData) {
