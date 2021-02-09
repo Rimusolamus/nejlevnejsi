@@ -1,36 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/two"
     android:layout_marginTop="8dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:backgroundTint="@color/main">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/offerHolder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:padding="8dp"
         app:layout_constraintEnd_toStartOf="parent"
-        android:padding="8dp">
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/offer_title"
-        style="@style/TextAppearance.AppCompat.Title.Inverse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/offerHolder"
-        app:layout_constraintStart_toStartOf="@+id/offerHolder"
-        android:text="title"/>
+        <TextView
+            android:id="@+id/offer_title"
+            style="@style/TextAppearance.AppCompat.Title.Inverse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="title"
+            app:layout_constraintStart_toStartOf="@+id/offerHolder"
+            app:layout_constraintTop_toTopOf="@+id/offerHolder"
+            app:layout_constraintEnd_toStartOf="@+id/star"/>
 
-    <TextView
-        android:id="@+id/offer_description"
-        style="@style/TextAppearance.AppCompat.Small.Inverse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/offer_title"
-        app:layout_constraintStart_toStartOf="@+id/offer_title"
-        android:text="description"/>
+        <TextView
+            android:id="@+id/offer_description"
+            style="@style/TextAppearance.AppCompat.Small.Inverse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="description"
+            app:layout_constraintStart_toStartOf="@+id/offer_title"
+            app:layout_constraintTop_toBottomOf="@+id/offer_title"
+            app:layout_constraintEnd_toStartOf="@+id/star"/>
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star"
+            style="?android:borderlessButtonStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

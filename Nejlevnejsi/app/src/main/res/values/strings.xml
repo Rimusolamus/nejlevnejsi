@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Nejlevnejsi</string>
     <string name="title_activity_add_offer">Neco nejlevnejsiho v okoli?</string>
+    <string name="popular_offers">Nejpopularnejsi nabidky</string>
+    <string name="search">Hledej</string>
+    <string name="favorite_offer">Moje libovky</string>
 </resources>

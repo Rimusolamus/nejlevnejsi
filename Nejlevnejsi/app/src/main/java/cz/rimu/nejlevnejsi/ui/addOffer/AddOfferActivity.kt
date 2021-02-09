@@ -29,7 +29,7 @@ class AddOfferActivity : AppCompatActivity(), OnMapReadyCallback {
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
         findViewById<ExtendedFloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Tvl vyplni všechna pole mrdko", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Vypln' všechna pole prosim", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
 
@@ -45,7 +45,6 @@ class AddOfferActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap?) {
         mMap = googleMap
-        // Add a marker in Sydney and move the camera
         // Add a marker in Sydney and move the camera
         val point = LatLng(21.0, 57.0)
         mMap?.addMarker(MarkerOptions().position(point).title("my marker"))

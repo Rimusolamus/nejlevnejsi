@@ -1,9 +1,10 @@
 package cz.rimu.nejlevnejsi
 
 import android.app.Application
+import cz.rimu.nejlevnejsi.di.dbModule
 import cz.rimu.nejlevnejsi.di.networkModule
-import cz.rimu.nejlevnejsi.repositories.MainRepository
-import cz.rimu.nejlevnejsi.ui.main.MainViewModel
+import cz.rimu.nejlevnejsi.repositories.HomeRepository
+import cz.rimu.nejlevnejsi.ui.home.MainViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
@@ -17,7 +18,7 @@ class Application: Application(){
             // Android context
             androidContext(this@Application)
             // modules
-            modules(listOf(networkModule, viewModelModule, mainRepositoryModule))
+            modules(listOf(networkModule, dbModule, viewModelModule, mainRepositoryModule))
         }
     }
 
@@ -28,7 +29,7 @@ class Application: Application(){
     }
 
     private val mainRepositoryModule = module {
-        factory { MainRepository(get()) }
+        factory { HomeRepository(get(), get()) }
     }
 
 }
